@@ -1,0 +1,14 @@
+<h1>{{ episodio.nome }} ({{ episodio.codigo_episodio }})</h1>
+<p>Data de Lançamento: {{ episodio.data_lancamento }}</p>
+<a href="{% url 'adicionar_review' episodio.id %}">Adicionar Review</a>
+
+<h2>Reviews</h2>
+<ul>
+    {% for review in reviews %}
+        <li>
+            {{ review.comentario }} ({{ review.criado_em }})
+            <a href="{% url 'editar_review' review.id %}">Editar</a>
+            <a href="{% url 'excluir_review' review.id %}">Excluir</a>
+        </li>
+    {% endfor %}
+</ul>

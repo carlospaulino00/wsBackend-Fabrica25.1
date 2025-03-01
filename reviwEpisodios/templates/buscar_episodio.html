@@ -1,0 +1,10 @@
+<h1>Buscar Episódio da API</h1>
+<form method="post">
+    {% csrf_token %}
+    <label for="episodio_id">ID do Episódio:</label>
+    <input type="text" id="episodio_id" name="episodio_id" required>
+    <button type="submit">Buscar</button>
+</form>
+{% if erro %}
+    <p style="color: red;">{{ erro }}</p>
+{% endif %}

@@ -1,0 +1,9 @@
+<h1>Lista de Episódios</h1>
+<a href="{% url 'buscar_episodio' %}">Buscar Episódio da API</a>
+<ul>
+    {% for episodio in episodios %}
+        <li>
+            <a href="{% url 'detalhes_episodio' episodio.id %}">{{ episodio.nome }} ({{ episodio.codigo_episodio }})</a>
+        </li>
+    {% endfor %}
+</ul>
